@@ -16,8 +16,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 public class Bus {
-    @PrimaryKey(autoGenerate = true)
-    public String busLineNum;
+    @PrimaryKey
+    public int busLineNum;
 
     public String busType;
     public String companyId;
@@ -31,7 +31,24 @@ public class Bus {
     public String startPoint;
     public String endPoint;
 
-
-    public Bus(String toString) {
+    public Bus(int busLineNum, String busType, String companyId, String endTime, String firstTime, String headway, String headwayHoli, String headwayNorm, String headwayPeak, Long lineId, String startPoint, String endPoint) {
+        this.busLineNum = busLineNum;
+        this.busType = busType;
+        this.companyId = companyId;
+        this.endTime = endTime;
+        this.firstTime = firstTime;
+        this.headway = headway;
+        this.headwayHoli = headwayHoli;
+        this.headwayNorm = headwayNorm;
+        this.headwayPeak = headwayPeak;
+        this.lineId = lineId;
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
     }
+
+    public Bus(String busType) {
+        this.busType = busType;
+    }
+
+    public Bus(){};
 }
